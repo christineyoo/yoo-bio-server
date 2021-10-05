@@ -11,7 +11,10 @@ const DepartmentsService = {
         return knex('departments').select('*').where({ id }).first()
     },
     deleteDepartment(knex, id) {
-        return knex('reviews').where({ id }).delete()
+        return knex('departments').where({ id }).delete()
+    },
+    updateDepartment(knex, id, newDepartmentFields) {
+        return knex('departments').where({ id }).update(newDepartmentFields)
     }
 }
 
